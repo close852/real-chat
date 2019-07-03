@@ -14,14 +14,16 @@ public class ChatRoom implements Comparable<ChatRoom>{
 	private LocalDateTime createDate;
 
 	@Builder
-	public ChatRoom(String roomId, String name) {
+	public ChatRoom(String roomId, String name,LocalDateTime createDate) {
 		this.roomId = roomId;
 		this.name = name;
+		this.createDate = createDate;
 	}
 	public static ChatRoom create(String name) {
 		return ChatRoom.builder()
 					.name(name)
 					.roomId(UUID.randomUUID().toString())
+					.createDate(LocalDateTime.now())
 					.build();
 	}
 	

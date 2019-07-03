@@ -66,6 +66,12 @@
 			<version>2.5.16</version>
 		</dependency>
 		<dependency>
+			<groupId>org.webjars.npm</groupId>
+			<artifactId>vue-router</artifactId>
+			<version>3.0.6</version>
+		</dependency>
+
+		<dependency>
 			<groupId>com.google.code.gson</groupId>
 			<artifactId>gson</artifactId>
 		</dependency>

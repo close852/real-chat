@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>vue.js</title>
+	<script th:src="@{/webjars/vue/2.5.16/dist/vue.min.js}"></script>
+	<script th:src="@{/webjars/vue-router/3.0.6/dist/vue-router.min.js}"></script>
+	<script th:src="@{/webjars/axios/0.17.1/dist/axios.min.js}"></script>
+</head>
+
+<body>
+	<h2>Vue.js - axios test</h2>
+	<div id="b-style">
+		<br />
+		<input type="text" v-model.lazy="msg">
+		<button v-on:click="createRoom" >createRoom</button>
+		<!--v-on:click="showRoooms(item.contactID, $event)" -->
+		<button v-on:click="showRoooms">showRoooms</button>
+		<ol>
+			<li v-for="room in rooms" :id="room.roomId">{{room.name}}</li>
+		</ol>
+	</div>
+	
+</body>
+<script th:src="@{/js/room.js}"></script>
+<script th:inline="javascript">
+    /*<![CDATA[*/
+		// app.$data.rooms=[[${rooms}]];
+    /*]]>*/
+</script>
+
+</html>

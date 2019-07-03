@@ -1,10 +1,10 @@
 package com.cjhm.repository;
 
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 import javax.annotation.PostConstruct;
 
@@ -26,8 +26,7 @@ public class ChatRoomRepository {
 	}
 
 	public List<ChatRoom> findAllRoom() {
-		List<ChatRoom> chatRooms = new ArrayList<>(chatRoomMap.values());
-		Collections.reverse(chatRooms);
+		 List<ChatRoom> chatRooms = (chatRoomMap.values()).stream().sorted(Collections.reverseOrder()).collect(Collectors.toList());
 		return chatRooms;
 	}
 
